@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todoapp/core/app_assets.dart';
 import 'package:todoapp/core/utils/app_strings.dart';
 
-import '../core/utils/app_colors.dart';
+import '../feature/auth/presentation/screen/splash_screen/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,10 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppStrings.tilte,
-        home: Scaffold(
-            backgroundColor: AppColors.background,
-            body: Center(
-              child: Image.asset(AppAssets.logo),
-            )));
+        home: SplashScreen());
   }
 }
