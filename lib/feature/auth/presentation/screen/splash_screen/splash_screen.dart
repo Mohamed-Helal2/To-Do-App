@@ -28,7 +28,7 @@ void navigate() {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => const OnBoardingScreen(),
+          builder: (_) =>   OnBoardingScreen(),
         ),
       );
     }
