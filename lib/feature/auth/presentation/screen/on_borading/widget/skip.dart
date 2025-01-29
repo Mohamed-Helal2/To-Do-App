@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/core/widget/custom_text_button.dart';
 import '../../../../../../core/utils/app_strings.dart';
 
 class Skip extends StatelessWidget {
@@ -10,9 +11,8 @@ class Skip extends StatelessWidget {
     return index != 2
         ? Align(
             alignment: Alignment.centerLeft,
-            child: TextButton(
-              child: Text(AppStrings.skip,
-                  style: Theme.of(context).textTheme.displaySmall),
+            child: CustomTextButton(
+              text: AppStrings.skip,
               onPressed: () {
                 pageController.jumpToPage(2);
               },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/feature/auth/presentation/screen/listner.dart';
 import '../../../data/model/on_boarding_model.dart';
 import 'widget/back_next_button.dart';
 import 'widget/dots.dart';
@@ -19,7 +20,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            // backgroundColor: AppColors.background,
             body: Padding(
                 padding: const EdgeInsets.all(24),
                 child: Column(
@@ -55,6 +55,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     //buttons
                     BackNextButton(
                         pageController: pageController, pageindex: pageindex),
+                    const CubitListner()
                   ],
                 ))));
   }

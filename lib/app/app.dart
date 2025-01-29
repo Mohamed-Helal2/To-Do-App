@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todoapp/core/service/service_locator.dart';
 import 'package:todoapp/core/theme/theme.dart';
 import 'package:todoapp/core/utils/app_strings.dart';
-import '../feature/auth/presentation/screen/splash_screen/splash_screen.dart';
+import 'package:todoapp/feature/auth/presentation/cubit/auth_cubit.dart';
+import '../feature/auth/presentation/screen/splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,6 +17,9 @@ class MyApp extends StatelessWidget {
         title: AppStrings.tilte,
         theme: getAppTheme(),
         themeMode: ThemeMode.light,
-        home: const SplashScreen());
+        home: BlocProvider(
+          create: (context) => sl<AuthCubit>()..navigate(),
+          child: const SplashScreen(),
+        ));
   }
 }

@@ -8,7 +8,7 @@ class OnBoardingModel {
 
   OnBoardingModel(
       {required this.imagepath, required this.title, required this.subTitle});
-static List<OnBoardingModel> list = [
+  static List<OnBoardingModel> list = [
     OnBoardingModel(
         imagepath: AppAssets.on1,
         title: AppStrings.onBoardingTitleOne,
@@ -21,5 +21,5 @@ static List<OnBoardingModel> list = [
         imagepath: AppAssets.on3,
         title: AppStrings.onBoardingTitleThree,
         subTitle: AppStrings.onBoardingSubTitleThree),
-  ];  
+  ];
 }
