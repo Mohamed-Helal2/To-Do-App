@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todoapp/core/utils/app_colors.dart';
 import '../../../data/model/on_boarding_model.dart';
 import 'widget/back_next_button.dart';
 import 'widget/dots.dart';
@@ -20,13 +19,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            backgroundColor: AppColors.background,
+            // backgroundColor: AppColors.background,
             body: Padding(
                 padding: const EdgeInsets.all(24),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Skip(index: pageindex,pageController: pageController),
+                    Skip(index: pageindex, pageController: pageController),
                     Expanded(
                       child: PageView.builder(
                         onPageChanged: (index) {
@@ -39,8 +38,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         itemBuilder: (context, index) {
                           return Column(
                             children: [
-                              // skip
-                              // Skip(index: index),
                               const SizedBox(height: 16),
                               //image
                               Image.asset(

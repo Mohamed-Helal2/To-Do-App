@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todoapp/core/utils/app_colors.dart';
-
 import '../../../../../core/app_assets.dart';
 import '../../../../../core/utils/app_strings.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../on_borading_screen/on_boarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,29 +11,29 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
     navigate();
-    
   }
-void navigate() {
-  Future.delayed(const Duration(seconds: 3), () {
-    if (mounted) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (_) =>   OnBoardingScreen(),
-        ),
-      );
-    }
-  });
-}
+
+  void navigate() {
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (_) => OnBoardingScreen(),
+          ),
+        );
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
+      // backgroundColor: AppColors.background,
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -46,11 +42,10 @@ void navigate() {
           const SizedBox(height: 24),
           Text(
             AppStrings.appName,
-            style: GoogleFonts.lato(
-              color: Colors.white,
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(context)
+                .textTheme
+                .displayLarge!
+                .copyWith(fontSize: 40),
           )
         ],
       )),
